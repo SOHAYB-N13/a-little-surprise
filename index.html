@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0410">
+  <meta name="description" content="یه سورپرایز کوچولو، مخصوص تو ❤️">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="یه سورپرایز کوچولو برات ❤️">
+  <meta property="og:description" content="یه سورپرایز کوچولو، مخصوص تو ❤️">
+  <meta property="og:url" content="https://SOHAYB-N13.github.io/a-little-surprise/">
+  <meta property="og:image" content="https://SOHAYB-N13.github.io/a-little-surprise/assets/og-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://SOHAYB-N13.github.io/a-little-surprise/assets/og-preview.jpg">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%92%97%3C/text%3E%3C/svg%3E">
+  <title>یه سورپرایز کوچولو برات ❤️</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <button class="sound-toggle" id="soundToggle" type="button" aria-label="روشن کردن موسیقی" aria-pressed="false" title="'گورانی هل که">
+    <svg class="icon-sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.6l4.4 3.7V5.8L7.6 9.5H4Zm11.2-.7a4.7 4.7 0 0 1 0 6.4m2.4-9a8.2 8.2 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <svg class="icon-sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.6l4.4 3.7V5.8L7.6 9.5H4Zm11.4.8 4.2 4.2m0-4.2-4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="sound-label">موسیقی</span>
+  </button>
+
+  <!-- Scene 1 · Opening -->
+  <main class="scene scene--intro is-active" id="intro">
+    <div class="intro-stack">
+      <div class="orbit" aria-hidden="true">
+        <span class="orbit-heart">♥</span>
+      </div>
+
+      <div class="intro-card glass reveal-up">
+        <p class="eyebrow">برای تو ...</p>
+        <h1 class="intro-title">گیانکم سورپرایزکم بوت هیه <br> بوم هی.. <span class="heart-inline">❤️</span></h1>
+        <p class="intro-note">توزک وقت دانه شتکم بو ساز کردوی </p>
+        <button class="btn btn--primary" id="openBtn" type="button">
+          <span>بازی که عشقممم</span><span class="btn-spark">✨</span>
+        </button>
+      </div>
+
+      <p class="intro-hint reveal-up">دست له هر جگایکی دی قلبکت بو ساز دکم </p>
+    </div>
+  </main>
+
+  <!-- Scene 2 · The reveal -->
+  <section class="scene scene--reveal" id="reveal" aria-hidden="true">
+    <div class="reveal-stack">
+      <p class="reveal-eyebrow">بو کسک که دنیای منی جوان کردوه کچه جوانکی خوم </p>
+
+      <div class="phrase-wrap" id="phraseWrap">
+        <div class="phrase-aura" aria-hidden="true"></div>
+        <h2 class="phrase" id="phrase">به قوربانت بم هناشکم</h2>
+        <span class="phrase-edge" aria-hidden="true"></span>
+      </div>
+
+      <div class="divider" aria-hidden="true"><span></span><i>♥</i><span></span></div>
+      <p class="reveal-sub">له تهی دلموه بو تو </p>
+
+      <div class="rose-wrap" id="rose" role="button" tabindex="0" aria-label="گل رز برات">
+        <img class="rose" src="assets/rose.webp" alt="" decoding="async" width="512" height="512">
+        <span class="rose-glow" aria-hidden="true"></span>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn--rose" id="heartBtn" type="button"><span>قلب بارون کن</span><span class="btn-spark">❤️</span></button>
+        <button class="btn btn--ghost is-hidden" id="secretBtn" type="button">   قسکی کشم هیه عشقم راوست   ✨</button>
+        <button class="btn btn--ghost is-hidden" id="finalBtn" type="button">آخر داستان ✨</button>
+      </div>
+
+      <div class="secret-card glass" id="secretCard" role="status" hidden>
+        <span class="secret-star" aria-hidden="true">✦</span>
+        <p>وقتک لکن توم همو شتک جوانه حته به دنگ بون بون خوشکم <br>زور ممنونم که هی گیانی من ایشالله هر بمنی بوم لسرت گرم </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scene 3 · Finale -->
+  <section class="scene scene--final" id="final" aria-hidden="true">
+    <div class="final-rings" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="final-stack">
+      <p class="final-eyebrow">و در آخر ...</p>
+      <p class="final-phrase">به قوربانت بم هناشکم</p>
+      <div class="final-line"><span></span><p>همیشه، بو تو ❤️</p><span></span></div>
+      <button class="btn btn--ghost" id="replayBtn" type="button">کرتکی کش  ✨</button>
+    </div>
+  </section>
+
+  <div id="heartLayer" aria-hidden="true"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
